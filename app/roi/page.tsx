@@ -33,8 +33,10 @@ export default function ROIPage() {
       }
     };
     update();
-    [nPatients.current, valueVisit.current, noShowRed.current, bookingIncrease.current].forEach(el => el?.addEventListener('input', update));
-    return () => [nPatients.current, valueVisit.current, noShowRed.current, bookingIncrease.current].forEach(el => el?.removeEventListener('input', update));
+    
+    const currentRefs = [nPatients.current, valueVisit.current, noShowRed.current, bookingIncrease.current];
+    currentRefs.forEach(el => el?.addEventListener('input', update));
+    return () => currentRefs.forEach(el => el?.removeEventListener('input', update));
   }, []);
 
   return (
