@@ -533,8 +533,10 @@ function ROIWidget() {
       }
     };
     update();
-    patientsRef.current?.addEventListener('input', update);
-    return () => patientsRef.current?.removeEventListener('input', update);
+    
+    const currentPatientsRef = patientsRef.current;
+    currentPatientsRef?.addEventListener('input', update);
+    return () => currentPatientsRef?.removeEventListener('input', update);
   }, []);
 
   return (
