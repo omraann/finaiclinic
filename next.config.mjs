@@ -4,15 +4,14 @@ const nextConfig = {
     remotePatterns: [
       { protocol: 'https', hostname: 'customer-assets.emergentagent.com' },
       { protocol: 'https', hostname: 'dummyimage.com' },
+      { protocol: 'https', hostname: 'lottie.host' },
       { protocol: 'https', hostname: 'assets1.lottiefiles.com' },
       { protocol: 'https', hostname: 'assets3.lottiefiles.com' },
-      { protocol: 'https', hostname: 'assets5.lottiefiles.com' }
+      { protocol: 'https', hostname: 'assets5.lottiefiles.com' },
+      { protocol: 'https', hostname: 'assets9.lottiefiles.com' }
     ]
   },
-  experimental: {
-    optimizeCss: true
-  },
-  output: 'export',
-  trailingSlash: true,
+  // Remove output: 'export' and trailingSlash for Vercel compatibility
+  // Remove experimental optimizeCss to prevent build issues
 };
 export default nextConfig;
